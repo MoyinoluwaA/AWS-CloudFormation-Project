@@ -47,7 +47,7 @@ workflows:
     jobs:
       - say-hello
       - save_hello_output
-      - print_world:
+      - print_output_file:
           requires: 
             - print_output_file
 
