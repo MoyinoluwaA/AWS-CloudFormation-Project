@@ -27,8 +27,6 @@ jobs:
           command: "echo hello"
 
   print_world:
-    requires:
-      - print_hello
     docker: 
       - image: circleci/node:13.8.0
     steps:
@@ -43,5 +41,7 @@ workflows:
     jobs:
       - say-hello
       - print_hello
-      - print_world
+      - print_world:
+          requires: 
+            - print_hello
 
